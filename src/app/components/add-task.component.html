@@ -1,0 +1,35 @@
+<div>
+  <h1>ToDo</h1>
+  <form [formGroup]="addTaskForm" (ngSubmit)="submitTask()">
+    <table>
+      <tr>
+        <td>Description:</td>
+        <td>
+          <input type="text" size="40" formControlName="description" />
+        </td>
+      </tr>
+      <tr>
+        <td>Priority:</td>
+        <td>
+          <select formControlName="priority">
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Due:</td>
+        <td>
+          <input type="date" size="40" formControlName="due" />
+        </td>
+      </tr>
+      <tr>
+        <button type="submit">Add Task</button>
+        <button type="button" (click)="modifyTask()" #modifyButton>
+          Modify
+        </button>
+      </tr>
+    </table>
+  </form>
+</div>

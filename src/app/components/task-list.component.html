@@ -1,0 +1,18 @@
+<div>
+  <h1>Task List</h1>
+  <table>
+    <tr
+      *ngFor="let task of tasks; let idx = index"
+      (click)="selectTask(idx)"
+      #idx
+    >
+      <td>{{ task.description }}</td>
+      <td>{{ task.priority }}</td>
+      <td>{{ task.due }}</td>
+      <td><button type="button" (click)="deleteTask(idx)">X</button></td>
+    </tr>
+    <tr *ngIf="tasks!.length <= 0">
+      <td>No Tasks Yet</td>
+    </tr>
+  </table>
+</div>
